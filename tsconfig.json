@@ -41,7 +41,7 @@
     "noUncheckedSideEffectImports": true,
     "moduleDetection": "force",
     "skipLibCheck": true,
-    "noImplicitAny": true,
+    "noImplicitAny": true
   },
   "include": ["src/**/*", "tests/**/*", "benchmarks/**/*", "vitest.config.ts", "eslint.config.mjs"],
   "exclude": ["node_modules", "dist"]

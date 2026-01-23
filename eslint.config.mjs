@@ -8,7 +8,7 @@ import prettier from 'eslint-config-prettier'
 export default [
   // Ignore build artifacts, etc.
   {
-    ignores: ['dist/**', 'node_modules/**', 'coverage/**', 'eslint.config.mjs']
+    ignores: ['dist/**', 'node_modules/**', 'coverage/**', 'eslint.config.mjs'],
   },
 
   // Base JS recommended
@@ -23,12 +23,12 @@ export default [
     languageOptions: {
       parserOptions: {
         project: true,
-        tsconfigRootDir: import.meta.dirname
-      }
+        tsconfigRootDir: import.meta.dirname,
+      },
     },
     plugins: {
       import: importPlugin,
-      unicorn
+      unicorn,
     },
     rules: {
       // General strictness / correctness
@@ -40,7 +40,7 @@ export default [
       '@typescript-eslint/no-floating-promises': 'error',
       '@typescript-eslint/no-misused-promises': 'error',
       '@typescript-eslint/no-explicit-any': 'error',
-      '@typescript-eslint/explicit-function-return-type': 'off', // too noisy for LeetCode
+      '@typescript-eslint/explicit-function-return-type': 'error', // too noisy for LeetCode
       '@typescript-eslint/switch-exhaustiveness-check': 'error',
 
       // Imports hygiene
@@ -49,15 +49,15 @@ export default [
         'error',
         {
           'newlines-between': 'always',
-          alphabetize: { order: 'asc', caseInsensitive: true }
-        }
+          alphabetize: { order: 'asc', caseInsensitive: true },
+        },
       ],
 
       // Good defaults (but not annoying)
       'unicorn/prefer-node-protocol': 'error',
       'unicorn/prefer-string-replace-all': 'error',
-      'unicorn/no-array-for-each': 'off' // LeetCode style often uses loops intentionally
-    }
+      'unicorn/no-array-for-each': 'off', // LeetCode style often uses loops intentionally
+    },
   },
 
   // Test files: allow common testing patterns
@@ -66,10 +66,10 @@ export default [
     plugins: { vitest },
     rules: {
       ...vitest.configs.recommended.rules,
-      'no-console': 'off'
-    }
+      'no-console': 'off',
+    },
   },
 
   // Disable formatting conflicts (if you add Prettier later)
-  prettier
+  prettier,
 ]

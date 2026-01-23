@@ -11,6 +11,6 @@
 
 ## Solutions
 
-| # | Title | Difficulty | Tags | Solution | Tests | Notes |
-|---:|------|------------|------|----------|-------|------|
-| 1 | Two Sum | Easy | Array, HashMap | `src/arrays/twoSum.ts` | `tests/arrays/twoSum.test.ts` | O(n) time |
+|   # | Title   | Difficulty | Tags           | Solution               | Tests                         | Notes     |
+| --: | ------- | ---------- | -------------- | ---------------------- | ----------------------------- | --------- |
+|   1 | Two Sum | Easy       | Array, HashMap | `src/arrays/twoSum.ts` | `tests/arrays/twoSum.test.ts` | O(n) time |
