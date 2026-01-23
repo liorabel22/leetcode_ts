@@ -13,7 +13,8 @@
 
     // Environment Settings
     // See also https://aka.ms/tsconfig/module
-    "module": "nodenext",
+    "module": "esnext",
+    "moduleResolution": "bundler",
     "target": "esnext",
     "types": ["node", "vitest/globals"],
     "typeRoots": ["./types", "./node_modules/@types", "./node_modules"],
@@ -42,13 +43,13 @@
     // Recommended Options
     "strict": true,
     "jsx": "react-jsx",
-    "verbatimModuleSyntax": true,
+    "verbatimModuleSyntax": false,
     "isolatedModules": true,
     "noUncheckedSideEffectImports": true,
     "moduleDetection": "force",
     "skipLibCheck": true,
     "noImplicitAny": true
   },
-  "include": ["src/**/*", "tests/**/*", "benchmarks/**/*", "vitest.config.ts", "eslint.config.mjs"],
+  "include": ["src", "tests", "benchmarks", "vitest.config.ts", "eslint.config.mjs"],
   "exclude": ["node_modules", "dist"]
 }
