@@ -1,9 +1,15 @@
 {
   // Visit https://aka.ms/tsconfig to read more about this file
   "compilerOptions": {
+    "ignoreDeprecations": "6.0",
     // File Layout
     // "rootDir": "./src",
     // "outDir": "./dist",
+    "baseUrl": ".",
+    "paths": {
+      "@arrays/*": ["src/arrays/*"],
+      "@linked-list/*": ["src/linked-list/*"],
+    },
 
     // Environment Settings
     // See also https://aka.ms/tsconfig/module
