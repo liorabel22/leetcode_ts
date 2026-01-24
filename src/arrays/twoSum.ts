@@ -35,13 +35,33 @@ export function twoSumOptimized(nums: number[], target: number): number[] {
 
     for (let i = 0; i < nums.length; i++) {
         const value: number | undefined = nums[i];
-        if (value) {
+        if (value !== undefined) {
             const missingNumber: number = target - value;
-            const secondIndex = numsMap[missingNumber];
-            if (secondIndex) {
+            const secondIndex: number | undefined = numsMap[missingNumber];
+            if (secondIndex !== undefined && secondIndex !== i) {
                 return [i, secondIndex];
             }
         }
+    }
+
+    return []
+}
+
+export function twoSumAnswer(nums: number[], target: number): number[] {
+    const numsMap = new Map<number, number>();
+
+    for (let i = 0; i < nums.length; i++) {
+        const currentValue: number | undefined = nums[i]
+        if (currentValue === undefined) {
+            continue
+        }
+        const missingNumber = target - currentValue;
+        const missingIndex = numsMap.get(missingNumber);
+
+        if (missingIndex !== undefined) {
+            return [i, missingIndex]
+        }
+        numsMap.set(currentValue, i)
     }
 
     return []
