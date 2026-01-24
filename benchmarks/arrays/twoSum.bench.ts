@@ -49,7 +49,7 @@ function consume(result: number[]): void {
 
 void sink // prevent unused variable warning
 
-describe('twoSum benchmarks', () => {
+describe('LeetCode #1 - TwoSum benchmarks', () => {
   for (const [implName, fn] of implementations) {
     describe(implName, () => {
       for (const [sizeName, input] of Object.entries(inputs) as [string, InputRecord][]) {

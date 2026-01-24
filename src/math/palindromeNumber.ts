@@ -14,7 +14,7 @@ export function isPalindrome(x: number): boolean {
 }
 
 // Time: O(n)
-// Space: O(n)
+// Space: O(1)
 // Description: Without converting x to a string
 
 export function isPalindromeWithoutConverting(x: number): boolean {
@@ -28,4 +28,38 @@ export function isPalindromeWithoutConverting(x: number): boolean {
   }
 
   return reverseNum === x
+}
+
+// Time: O(log10(n))
+// Space: O(1)
+// Description: Compare digits from start and end without extra space
+
+export function isPalindromeOptimized(x: number): boolean {
+  if (x < 0) return false
+  if (x < 10) return true
+
+  let divisor = 1
+  while (Math.floor(x / divisor) >= 10) {
+    divisor *= 10
+  }
+
+  let left = x
+  let right = x
+
+  while (left > 0) {
+    const leftDigit = Math.floor(left / divisor)
+    const rightDigit = right % 10
+
+    if (leftDigit !== rightDigit) {
+      return false
+    }
+
+    left = left % divisor // Remove leftmost digit
+    left = Math.floor(left / 10) // Remove rightmost digit
+    right = Math.floor(right / 10) // Remove rightmost digit
+
+    divisor = divisor / 100 // Adjust divisor for two removed digits
+  }
+
+  return true
 }

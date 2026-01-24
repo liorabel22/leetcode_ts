@@ -121,12 +121,38 @@ test.each(matrix)('$implName - $name', ({ fn, input, ... }) => {
 
 const benchTemplate = `import { bench, describe } from 'vitest'
 
-import { ${fnName} } from '../../src/${cat}/${fnName}'
+import { ${functionName} } from '@${cat}/${camelTitle}'
 
-describe('${fnName} benchmarks', () => {
-  bench('baseline', () => {
-    ${fnName}()
-  })
+type ${pascalTitle}Fn = () => void
+
+const implementations: [string, ${pascalTitle}Fn][] = [
+  ['${functionName}', ${functionName}],
+];
+
+// Prevent dead-code elimination
+let sink = 0
+function consume(result: any): void {
+  sink ^= TODO
+}
+
+void sink // prevent unused variable warning
+
+const inputs: Record<string, number> = {
+  // 'small input': TODO,
+  // 'large input': TODO,
+}
+
+describe('LeetCode #${id} - ${title} benchmarks', () => {
+  for (const [implName, fn] of implementations) {
+    describe(implName, () => {
+      for (const [sizeName, value] of Object.entries(inputs)) {
+        bench(sizeName, () => {
+          const result = fn(value)
+          consume(result)
+        })
+      }
+    })
+  }
 })
 `
 

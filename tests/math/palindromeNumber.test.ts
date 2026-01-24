@@ -1,12 +1,17 @@
 import { test, expect } from 'vitest'
 
-import { isPalindrome, isPalindromeWithoutConverting } from '@math/palindromeNumber'
+import {
+  isPalindrome,
+  isPalindromeWithoutConverting,
+  isPalindromeOptimized,
+} from '@math/palindromeNumber'
 
 type IsPalindromeFn = (x: number) => boolean
 
 const implementations: [string, IsPalindromeFn][] = [
   ['isPalindrome', isPalindrome],
   ['isPalindromeWithoutConverting', isPalindromeWithoutConverting],
+  ['isPalindromeOptimized', isPalindromeOptimized],
 ]
 
 interface TestCase {
