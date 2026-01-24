@@ -167,6 +167,6 @@ if (ok1 && ok2 && ok3) {
 - ${benchFile}
 
 README row (paste into table):
-| ${id} | ${title} | ${diff} | ${tags} | \`src/${cat}/${camelTitle}.ts\` | \`tests/${cat}/${fnName}.test.ts\` | \`benchmarks/${cat}/${camelTitle}.bench.ts\` | O() time, O() space |
+| ${id} | ${title} | ${diff} | ${tags} | \`src/${cat}/${camelTitle}.ts\` | \`tests/${cat}/${camelTitle}.test.ts\` | \`benchmarks/${cat}/${camelTitle}.bench.ts\` | O() time, O() space |
 `)
 }
