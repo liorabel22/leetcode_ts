@@ -1,4 +1,4 @@
-// ID: 1
+// LeetCode #1: TwoSum
 // Difficulty: Easy
 // Tags: Array, Hash Table
 
