@@ -9,6 +9,7 @@
     "paths": {
       "@arrays/*": ["src/arrays/*"],
       "@linked-list/*": ["src/linked-list/*"],
+      "@math/*": ["src/math/*"],
     },
 
     // Environment Settings

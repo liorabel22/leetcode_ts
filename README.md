@@ -13,4 +13,5 @@
 
 |   # | Title   | Difficulty | Tags           | Solution               | Tests                         | Notes     |
 | --: | ------- | ---------- | -------------- | ---------------------- | ----------------------------- | --------- |
-|   1 | Two Sum | Easy       | Array, HashMap | `src/arrays/twoSum.ts` | `tests/arrays/twoSum.test.ts` | O(n) time |
+|   1 | Two Sum | Easy       | Array, HashMap | `src/arrays/twoSum.ts` | `tests/arrays/twoSum.test.ts` | O(n) time, O(n) space |
+| 9 | Palindrome Number | Easy | Math | `src/math/palindromeNumber.ts` | `tests/math/palindromeNumber.test.ts` | `benchmarks/math/palindromeNumber.bench.ts` | O(n) time, O(n) space |
