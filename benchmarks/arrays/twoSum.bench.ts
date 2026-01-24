@@ -3,12 +3,15 @@ import { bench, describe } from 'vitest'
 import { twoSum, twoSumAnswer, twoSumOptimized } from '@arrays/twoSum'
 
 type TwoSumFn = (nums: number[], target: number) => number[]
-interface InputRecord { nums: number[]; target: number }
+interface InputRecord {
+  nums: number[]
+  target: number
+}
 
 function makeInput(n: number): InputRecord {
   // Create a solution near the end
   const nums = Array.from({ length: n }, (_, i) => i)
-  const target = (n - 2) + (n - 1)
+  const target = n - 2 + (n - 1)
   return { nums, target }
 }
 
@@ -16,7 +19,7 @@ function makeInput(n: number): InputRecord {
  * Pre-generate inputs once to avoid measuring array creation.
  */
 interface Input {
-  'n=1e3': InputRecord,
+  'n=1e3': InputRecord
   'n=1e5': InputRecord
 }
 

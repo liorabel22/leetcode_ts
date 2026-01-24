@@ -50,7 +50,7 @@ const functionName = args.get('fn-name')
 
 if (!id || !title) {
   console.error(
-    'Usage:\n  npm run new -- --id 9 --fn-name isPalindrome --cat math --title "Palindrome Number" --diff Easy --tags "Math"'
+    'Usage:\n  npm run new -- --id 9 --fn-name isPalindrome --cat math --title "Palindrome Number" --diff Easy --tags "Math"',
   )
   process.exit(1)
 }
