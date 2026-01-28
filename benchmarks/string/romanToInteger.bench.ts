@@ -2,34 +2,32 @@ import { bench, describe } from 'vitest'
 
 import { romanToInt } from '@string/romanToInteger'
 
-type RomanToIntegerFn = () => void
-
-const implementations: [string, RomanToIntegerFn][] = [
-  ['romanToInt', romanToInt],
-];
-
-// Prevent dead-code elimination
+/**
+ * Deterministic sink to prevent dead-code elimination
+ */
 let sink = 0
-function consume(result: any): void {
-  sink ^= TODO
+function consume(value: number): void {
+  // small, deterministic operation
+  sink ^= value + 31
 }
 
-void sink // prevent unused variable warning
+void sink
 
-const inputs: Record<string, number> = {
-  // 'small input': TODO,
-  // 'large input': TODO,
+/**
+ * Predefined Roman numerals of increasing length / complexity
+ */
+const inputs: Record<string, string> = {
+  tiny: 'III', // 3
+  small: 'LVIII', // 58
+  medium: 'MCMXCIV', // 1994
+  large: 'MMMDCCCLXXXVIII', // 3888 (max typical Roman)
+  repeated: 'M'.repeat(1000), // stress test: long linear input
 }
 
-describe('LeetCode #13 - Roman to Integer benchmarks', () => {
-  for (const [implName, fn] of implementations) {
-    describe(implName, () => {
-      for (const [sizeName, value] of Object.entries(inputs)) {
-        bench(sizeName, () => {
-          const result = fn(value)
-          consume(result)
-        })
-      }
+describe('romanToInt benchmarks', () => {
+  for (const [name, roman] of Object.entries(inputs)) {
+    bench(name, () => {
+      consume(romanToInt(roman))
     })
   }
 })

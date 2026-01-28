@@ -15,4 +15,4 @@
 | --: | ----------------- | ---------- | ------------------------ | ------------------------------ | ------------------------------------- | ------------------------------------------- | --------------------- |
 |   1 | Two Sum           | Easy       | Array, HashMap           | `src/arrays/twoSum.ts`         | `tests/arrays/twoSum.test.ts`         | O(n) time, O(n) space                       |
 |   9 | Palindrome Number | Easy       | Math                     | `src/math/palindromeNumber.ts` | `tests/math/palindromeNumber.test.ts` | `benchmarks/math/palindromeNumber.bench.ts` | O(n) time, O(n) space |
-|  13 | Roman to Integer  | Easy       | Hash Table, Math, String | `src/string/romanToInteger.ts` | `tests/string/romanToInteger.test.ts` | `benchmarks/string/romanToInteger.bench.ts` | O() time, O() space   |
+|  13 | Roman to Integer  | Easy       | Hash Table, Math, String | `src/string/romanToInteger.ts` | `tests/string/romanToInteger.test.ts` | `benchmarks/string/romanToInteger.bench.ts` | O(n) time, O(1) space |
